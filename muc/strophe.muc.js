@@ -579,13 +579,11 @@
 
       this._addOccupant = __bind(this._addOccupant, this);
 
-      ({
-        this.roster: {},
-        this._message_handlers: {},
-        this._presence_handlers: {},
-        this._roster_handlers: {},
-        this._handler_ids: 0
-      });
+      this.roster = {};
+      this._message_handlers = {};
+      this._presence_handlers = {};
+      this._roster_handlers = {};
+      this._handler_ids = 0;
       if (client.muc) {
         this.client = client.muc;
       }
