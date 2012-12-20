@@ -570,16 +570,6 @@
 
   XmppRoom = (function() {
 
-    XmppRoom.prototype.roster = {};
-
-    XmppRoom.prototype._message_handlers = {};
-
-    XmppRoom.prototype._presence_handlers = {};
-
-    XmppRoom.prototype._roster_handlers = {};
-
-    XmppRoom.prototype._handler_ids = 0;
-
     function XmppRoom(client, name, nick, password) {
       this.client = client;
       this.name = name;
@@ -589,6 +579,13 @@
 
       this._addOccupant = __bind(this._addOccupant, this);
 
+      ({
+        this.roster: {},
+        this._message_handlers: {},
+        this._presence_handlers: {},
+        this._roster_handlers: {},
+        this._handler_ids: 0
+      });
       if (client.muc) {
         this.client = client.muc;
       }
